@@ -14,7 +14,7 @@ Feature: Sign in
       |Detail|
       |onyx3k4u@yahoo.com|
 
-@exclude
+
  Scenario Outline: User can cannot successfully sign into BBC webpage
    And I click on sign in
    When I enter a "<Emailorusername>"
@@ -28,7 +28,7 @@ Feature: Sign in
     |test@gmail.com |        |
     |               |test123 |
 
-@exclude
+
   Scenario Outline: User can search for specific kind of news
     When I click on the search BBC field
     And I enter the "<typeofnews>"
