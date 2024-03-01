@@ -56,15 +56,25 @@ public class signinSteps extends BasePage{
 
         @Given("I click on sign in")
         public void i_click_on_sign_in() {
+            BbcHomePage.ClickSignInLogo();
 
         }
         @When("I enter a {string}")
-        public void i_enter_a(String string) {
-
+        public void i_enter_a(String WrongEmailAddress) {
+            BbcSignInPage.enterWrongEmailAddress(WrongEmailAddress);
+            BbcSignInPage.clickNextButton();
         }
+
+    @When("I enter a wrong {string}")
+    public void i_enter_a_wrong(String WrongPassword) {
+            BbcSignInPage.enterWrongPassword(WrongPassword);
+            BbcSignInPage.clickDoneButton();
+    }
+
 
         @Then("an error message is displayed")
         public void an_error_message_is_displayed() {
+
 
         }
 
@@ -72,10 +82,11 @@ public class signinSteps extends BasePage{
         public void i_click_on_the_search_bbc_field() {
 
         }
-        @When("I enter the {string}")
-        public void i_enter_the(String string) {
 
-        }
+    @When("I enter the {string}")
+    public void i_enter_the(String string) {
+    }
+
         @Then("a list of news is displayed")
         public void a_list_of_news_is_displayed() {
 

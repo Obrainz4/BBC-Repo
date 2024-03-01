@@ -1,5 +1,6 @@
 package co.uk.pages;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -24,6 +25,8 @@ public class BbcSignInPage extends BasePage {
     @FindBy(xpath = "//button[@id='submit-button']")
     private WebElement doneButton;
 
+    @FindBy(xpath = "//span[normalize-space()='Sorry, that password is too short']")
+    private WebElement passwordError;
 
 
 
@@ -45,5 +48,18 @@ public class BbcSignInPage extends BasePage {
         doneButton.click();
     }
 
+    public void enterWrongEmailAddress(String WrongEmailAddress){
+        emailField.clear();
+        emailField.sendKeys(WrongEmailAddress);
+    }
+
+    public void enterWrongPassword(String WrongPassword){
+        passwordField.clear();
+        passwordField.sendKeys(WrongPassword);
+    }
+    public void isPasswordErrorDisplayed(){
+        Assert.assertTrue(passwordError.isDisplayed());
+    }
 
 }
+

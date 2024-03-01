@@ -19,7 +19,6 @@ public class BbcSettingsPage extends BasePage {
 
    public void isPersonalDetailsDisplayed(){
         Assert.assertTrue("User is logged in",personalDetails.isDisplayed());
-
     }
 
 }
