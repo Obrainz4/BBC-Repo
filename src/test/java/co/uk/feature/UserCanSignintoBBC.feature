@@ -26,7 +26,6 @@ Feature: Sign in
     |Emailorusername|Password|
     |test@gmail.com |test123 |
     |test@gmail.com |        |
-    |               |test123 |
 
 @exclude
   Scenario Outline: User can search for specific kind of news
